@@ -27,14 +27,20 @@ function reboot() {
     done
 }
 
+
+function cmd() {
+    for i in $hosts;do
+        ssh -o ConnectTimeout=1 root@$i $1
+    done
+}
+
 if [[ "" == $1 ]];then
     echo "====================="
     echo "bash batch.sh cphosts"
     echo "bash batch.sh shutdown"
     echo "bash batch.sh reboot"
 else
-    for c in "$@";do
-        echo "$c"
-        $c
-    done
+    $@
 fi
+
+

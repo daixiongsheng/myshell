@@ -1,3 +1,30 @@
+ZSH_THEME="random"
+plugins=(
+  git
+  z
+  brew
+  vscode
+  man
+  golang
+  docker
+  mvn
+  node
+  nvm
+  redis-cli
+  sublime
+  vim-interaction
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  sudo
+  systemadmin
+  systemd
+)
+
+if [ -f "$HOME/myshell/batch.sh" ]
+then
+  alias run="$HOME/myshell/batch.sh"
+fi
+
 
 function kd() {
   if [[ -z "$1" ]]; then
@@ -69,6 +96,7 @@ function push () {
   git commit -m "$date $1"
   git push origin master
 }
+
 
 
 
