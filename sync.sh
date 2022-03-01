@@ -11,5 +11,4 @@ then
 	echo $date $1
 	git commit -m "$date $1"
 	git push origin master
-	push
 fi
