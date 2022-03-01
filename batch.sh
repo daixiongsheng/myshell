@@ -40,6 +40,7 @@ function cmd() {
 }
 
 function update() {
+    init
     for i in $hosts;do
         ssh -o ConnectTimeout=1 root@$i "cd /root/myshell && git pull"
     done
@@ -56,6 +57,9 @@ if [[ "" == $1 ]];then
     echo "bash batch.sh cphosts"
     echo "bash batch.sh shutdown"
     echo "bash batch.sh reboot"
+    echo "bash batch.sh run cmd"
+    echo "bash batch.sh init"
+    echo "bash batch.sh update"
 else
     $@
 fi
