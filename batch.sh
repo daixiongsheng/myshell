@@ -27,12 +27,29 @@ function reboot() {
     done
 }
 
+function test() {
+    ssh -o ConnectTimeout=1 root@rocketmq100 "$*"
+}
+
 
 function cmd() {
+    echo "$*"
     for i in $hosts;do
-        ssh -o ConnectTimeout=1 root@$i $1
+        ssh -o ConnectTimeout=1 root@$i "$*"
     done
 }
+
+function update() {
+    for i in $hosts;do
+        ssh -o ConnectTimeout=1 root@$i "cd /root/myshell && git pull"
+    done
+}
+
+function init() {
+    cmd 'test -d /root/myshell && echo ok || (https_proxy=mac:9999 git clone https://github.com/daixiongsheng/myshell.git /root/myshell)'
+    cmd "cat /root/.zshrc | grep -q base.sh && echo ok || sed -i 's/source \$ZSH\\/oh-my-zsh.sh/\\nif [ -f \$HOME\\/myshell\\/base.sh ]\\nthen\\n    source \$HOME\\/myshell\\/base.sh\\nfi\\nsource \$ZSH\\/oh-my-zsh.sh/g' /root/.zshrc"
+}
+
 
 if [[ "" == $1 ]];then
     echo "====================="
@@ -42,5 +59,6 @@ if [[ "" == $1 ]];then
 else
     $@
 fi
+
 
 

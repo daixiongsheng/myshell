@@ -12,7 +12,6 @@ plugins=(
   nvm
   redis-cli
   sublime
-  vim-interaction
   zsh-autosuggestions
   zsh-syntax-highlighting
   sudo
