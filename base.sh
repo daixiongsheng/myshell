@@ -14,6 +14,7 @@ plugins=(
   sublime
   zsh-autosuggestions
   zsh-syntax-highlighting
+  brew
   sudo
   systemadmin
   systemd
@@ -70,6 +71,27 @@ function addpath() {
 }
 
 
+function bsstop() {
+  for i in "$@";
+  do
+    brew services stop $i
+  done
+}
+
+function bsstart() {
+  for i in "$@";
+  do
+    brew services start $i
+  done
+}
+
+function bsrestart() {
+  for i in "$@";
+  do
+    brew services restart $i
+  done
+}
+
 
 function proxy() {
     export http_proxy=http://127.0.0.1:9999
@@ -82,8 +104,9 @@ function kf() {
   nohup /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/bin/java -jar $HOME/Documents/apps/kafka-map/kafka-map.jar  > /dev/null 2>&1 &
 }
 
+
 function tools() {
-  echo "ag  pt  gt awk bat:cat htop:top duf  tldr"
+  echo 'ag pt ack rg duf:df bat:cat tldr:man htop:top exa:ls axel:wget'
 }
 
 
@@ -94,6 +117,16 @@ function push () {
   echo $date $1
   git commit -m "$date $1"
   git push origin master
+}
+
+
+
+function gid() {
+  if [[ "" == $1 ]]; then
+    git rev-parse HEAD
+  else 
+    git rev-parse $1
+  fi
 }
 
 
@@ -113,11 +146,7 @@ alias tp="open -a Typora"
 alias gor="go run"
 alias hn="hexo new"
 alias o="open ."
-alias v="code ."
 alias c=clear
-alias al="ssh root@39.108.57.230"
-alias kl="ssh parallels@192.168.1.207"
-alias klr="ssh root@192.168.1.207"
 alias nsr="npm run server"
 alias nst="npm run start"
 alias dport="lsof -i "
@@ -146,7 +175,17 @@ alias "kb=nohup kibana > /dev/null 2>&1 & "
 alias "eshead=pm2 restart grunt"
 alias "go2=$HOME/Documents/repositories/go/bin/go tool go2go"
 alias "zp=nohup java -jar $HOME/Documents/apps/ZooInspector/build/zookeeper-dev-ZooInspector.jar > /dev/null 2>&1 &"
-alias "bs=brew services"
 alias "shv=ssh -o user=root"
+alias "hip=history -i | grep"
+alias "grget=git remote get-url origin"
 
+alias "landnode"="arc land --keep-branchs --onto master  --revision"
+alias "landrn"="arc land --keep-branchs --onto main  --revision"
+alias "diffnode"="arc diff origin/master"
+alias "diffrn"="arc diff origin/main"
+alias "bsr=brew services restart"
+alias "bs=brew services"
+alias "bss=brew services start"
+alias "file-count=ls -lR|grep "^-"|wc -l"
+alias v="code ."
 
