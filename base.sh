@@ -94,8 +94,8 @@ function bsrestart() {
 
 
 function proxy() {
-    export http_proxy=http://127.0.0.1:9999
-    export https_proxy=http://127.0.0.1:9999
+    export http_proxy=http://mac:9999
+    export https_proxy=http://mac:9999
 }
 
 
