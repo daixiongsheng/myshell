@@ -38,6 +38,10 @@ function mc() {
 	mkdir $1 && cd $1
 }
 
+function gop() {
+	open `git remote get-url origin`
+}
+
 
 function server() {
   if [[ $1 == "" ]]; then
@@ -124,7 +128,7 @@ function push () {
 function gid() {
   if [[ "" == $1 ]]; then
     git rev-parse HEAD
-  else 
+  else
     git rev-parse $1
   fi
 }
