@@ -45,8 +45,10 @@ function gop() {
 
 function server() {
   if [[ $1 == "" ]]; then
+      open http://127.0.0.1
         python3 -m http.server 80
   else
+      open http://127.0.0.1:$1
     python3 -m http.server $1
   fi;
 }
@@ -154,7 +156,7 @@ alias c=clear
 alias nsr="npm run server"
 alias nst="npm run start"
 alias dport="lsof -i "
-alias ip="ifconfig"
+alias ip='ifconfig -u en0 | egrep "inet\s+.*" | egrep "(\d+\.){3}\d+"'
 alias hi="history -i"
 alias bi="brew install"
 alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
@@ -189,7 +191,7 @@ alias "diffnode"="arc diff origin/master"
 alias "diffrn"="arc diff origin/main"
 alias "bsr=brew services restart"
 alias "bs=brew services"
-alias "bss=brew services start"
 alias "file-count=ls -lR|grep "^-"|wc -l"
 alias v="code ."
 
+alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"

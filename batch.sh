@@ -40,8 +40,8 @@ function cmd() {
 }
 
 function update() {
-    init
     for i in $hosts;do
+        echo $i
         ssh -o ConnectTimeout=1 root@$i "cd /root/myshell && git pull"
     done
 }
