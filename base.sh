@@ -195,3 +195,4 @@ alias "file-count=ls -lR|grep "^-"|wc -l"
 alias v="code ."
 
 alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
+alias "hig=history -i | grep "
