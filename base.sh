@@ -39,7 +39,15 @@ function mc() {
 }
 
 function gop() {
-	open `git remote get-url origin`
+	url=`git remote get-url origin`
+  if [[ $url =~ "git@.*" ]];
+  then
+    url=${url##git@}
+    url=${url/:/\/}
+    open https://$url
+  else
+    open $url
+  fi
 }
 
 
