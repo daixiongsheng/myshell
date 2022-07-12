@@ -134,6 +134,12 @@ function push () {
 }
 
 
+function gdo () {
+  b=`git_current_branch`
+  git diff "origin/$b"
+}
+
+
 
 function gid() {
   if [[ "" == $1 ]]; then
