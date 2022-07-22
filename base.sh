@@ -1,4 +1,4 @@
-ZSH_THEME="random"
+ZSH_THEME="adben"
 plugins=(
   git
   z
