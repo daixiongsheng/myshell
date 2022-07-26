@@ -34,6 +34,14 @@ function kd() {
   ps aux | grep $1 | awk '{print $2}' | xargs kill -9
 }
 
+function resetGit() {
+    git reset 
+    git checkout .
+    git clean -fd 
+
+
+}
+
 function mc() {
 	mkdir $1 && cd $1
 }
