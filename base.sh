@@ -142,7 +142,7 @@ function push () {
 }
 
 
-function gdo () {
+function gdr () {
   b=`git_current_branch`
   git diff "origin/$b"
 }
