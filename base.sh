@@ -38,13 +38,12 @@ function resetGit() {
     git reset 
     git checkout .
     git clean -fd 
-
-
 }
 
 function mc() {
 	mkdir $1 && cd $1
 }
+
 
 function gop() {
 	url=`git remote get-url origin`
@@ -219,3 +218,5 @@ alias v="code ."
 alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
 alias "hig=history -i | grep "
 alias "dev=ssh daixiongsheng@dev.cc"
+alias nnode='node -e "const exit=()=>process.exit(0)" -i'
+
