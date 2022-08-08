@@ -1,4 +1,4 @@
-ZSH_THEME="random"
+ZSH_THEME="adben"
 plugins=(
   git
   z
@@ -34,9 +34,16 @@ function kd() {
   ps aux | grep $1 | awk '{print $2}' | xargs kill -9
 }
 
+function resetGit() {
+    git reset 
+    git checkout .
+    git clean -fd 
+}
+
 function mc() {
 	mkdir $1 && cd $1
 }
+
 
 function gop() {
 	url=`git remote get-url origin`
@@ -134,6 +141,12 @@ function push () {
 }
 
 
+function gdr () {
+  b=`git_current_branch`
+  git diff "origin/$b"
+}
+
+
 
 function gid() {
   if [[ "" == $1 ]]; then
@@ -205,4 +218,9 @@ alias v="code ."
 alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
 alias "hig=history -i | grep "
 alias "dev=ssh daixiongsheng@dev.cc"
+<<<<<<< HEAD
 alias "p=pnpm"
+=======
+alias nnode='node -e "const exit=()=>process.exit(0)" -i'
+
+>>>>>>> e0fcf4cfdd24c42da3745a0b7bd887612df9db81
