@@ -218,9 +218,5 @@ alias v="code ."
 alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
 alias "hig=history -i | grep "
 alias "dev=ssh daixiongsheng@dev.cc"
-<<<<<<< HEAD
 alias "p=pnpm"
-=======
 alias nnode='node -e "const exit=()=>process.exit(0)" -i'
-
->>>>>>> e0fcf4cfdd24c42da3745a0b7bd887612df9db81
