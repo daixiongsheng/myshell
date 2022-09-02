@@ -220,3 +220,5 @@ alias "hig=history -i | grep "
 alias "dev=ssh daixiongsheng@dev.cc"
 alias nnode='node -e "const exit=()=>process.exit(0)" -i'
 
+alias "ysm=yarn serve-m"
+alias "ys=yarn start"
