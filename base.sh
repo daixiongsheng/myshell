@@ -218,7 +218,7 @@ alias v="code ."
 alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
 alias "hig=history -i | grep "
 alias "dev=ssh daixiongsheng@dev.cc"
+alias "p=pnpm"
 alias nnode='node -e "const exit=()=>process.exit(0)" -i'
-
 alias "ysm=yarn serve-m"
 alias "ys=yarn start"
