@@ -18,16 +18,23 @@ plugins=(
   sudo
   systemadmin
   systemd
+  ag
+  alias-finder
+  aliases
+  copyfile
+  copypath
+  dash
+  dirhistory
 )
 
-if [ -f "$HOME/myshell/batch.sh" ]
+if [ -f "$PWD/batch.sh" ]
 then
-  alias run="$HOME/myshell/batch.sh"
+  alias run="$PWD/batch.sh"
 fi
 
-if [ -f "$HOME/myshell/fun.sh" ]
+if [ -f "$PWD/common.sh" ]
 then
-  source $HOME/myshell/fun.sh
+  source $PWD/common.sh
 fi
 
 
@@ -36,7 +43,6 @@ alias gs="git stash"
 alias gcz="git cz"
 alias nid="npm install -D"
 alias nr="npm run"
-alias ns="npm run start"
 alias nrd="npm run dev"
 alias ni="npm i"
 alias nig="npm i -g"
@@ -75,7 +81,6 @@ alias "eshead=pm2 restart grunt"
 alias "go2=$HOME/Documents/repositories/go/bin/go tool go2go"
 alias "zp=nohup java -jar $HOME/Documents/apps/ZooInspector/build/zookeeper-dev-ZooInspector.jar > /dev/null 2>&1 &"
 alias "shv=ssh -o user=root"
-alias "hip=history -i | grep"
 alias "grget=git remote get-url origin"
 
 alias "landnode"="arc land --keep-branchs --onto master  --revision"
@@ -96,5 +101,7 @@ alias "ysm=yarn serve-m"
 alias "ys=yarn start"
 alias dir="ls -l | grep "^d" | awk '{print \$NF}'"
 alias files="ls -l | grep "^-" | awk '{print \$NF}'"
+alias gcaam="git add --all; git commit -a -m"
+alias gcaam!="git add --all; git commit -v -a --no-edit --amend"
 
 

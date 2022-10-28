@@ -1,4 +1,37 @@
 #!/bin/bash
+if [ -f "$PWD/class.sh" ]
+then
+  source "$PWD/class.sh"
+fi
+
+if [ -f "$PWD/array.sh" ]
+then
+  source "$PWD/array.sh"
+fi
+
+
+
+
+function newArray() {
+  arr=()
+  for i in "$@"
+  do
+
+    # array_name[${#array_name[@]}]=value
+    arr[${#arr[*]}]=$i
+  done
+  echo ${arr[*]}
+}
+a=$(newArray)
+
+for i in $a
+do
+  echo $i
+done
+
+
+
+
 function kd() {
   if [[ -z "$1" ]]; then
     echo "Usage: $0 process name"
@@ -57,7 +90,8 @@ function addAs() {
 
 function addpath() {
   p=$1
-  if [[ $p == "" ]] then;
+  if [[ $p == "" ]] 
+  then
     p=$PWD
   fi
   echo "export PATH=\$PATH:$p" >> ~/.zshrc
@@ -116,7 +150,8 @@ function push () {
 
 function gdr () {
   b=`git_current_branch`
-  if [[ $1 != "" ]] then;
+  if [[ $1 != "" ]] 
+  then
     b=$1
   fi
   git diff "origin/$b"
@@ -125,7 +160,8 @@ function gdr () {
 
 
 function gid() {
-  if [[ "" == $1 ]]; then
+  if [[ "" == $1 ]]
+  then
     git rev-parse HEAD
   else
     git rev-parse $1
@@ -136,14 +172,15 @@ function gid() {
 function rms() {
   from=$1
   to=$2
-  if [[ "" == "$from" ]];then
+  if [[ "" == "$from" ]]
+  then
     echo "useage: rms from to"
     return
   fi
   for file in `files`; 
   do
     out=`echo $file | sed "s/$from/$to/g"`
-    mv $file $out
+    mv "$file" "$out"
   done
 }
 
