@@ -11,27 +11,6 @@ fi
 
 
 
-
-function newArray() {
-  arr=()
-  for i in "$@"
-  do
-
-    # array_name[${#array_name[@]}]=value
-    arr[${#arr[*]}]=$i
-  done
-  echo ${arr[*]}
-}
-a=$(newArray)
-
-for i in $a
-do
-  echo $i
-done
-
-
-
-
 function kd() {
   if [[ -z "$1" ]]; then
     echo "Usage: $0 process name"
@@ -41,9 +20,9 @@ function kd() {
 }
 
 function resetGit() {
-    git reset 
+    git reset
     git checkout .
-    git clean -fd 
+    git clean -fd
 }
 
 function mc() {
@@ -90,7 +69,7 @@ function addAs() {
 
 function addpath() {
   p=$1
-  if [[ $p == "" ]] 
+  if [[ $p == "" ]]
   then
     p=$PWD
   fi
@@ -150,7 +129,7 @@ function push () {
 
 function gdr () {
   b=`git_current_branch`
-  if [[ $1 != "" ]] 
+  if [[ $1 != "" ]]
   then
     b=$1
   fi
@@ -177,7 +156,7 @@ function rms() {
     echo "useage: rms from to"
     return
   fi
-  for file in `files`; 
+  for file in `files`;
   do
     out=`echo $file | sed "s/$from/$to/g"`
     mv "$file" "$out"
