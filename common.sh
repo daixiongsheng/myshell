@@ -1,15 +1,4 @@
 #!/bin/bash
-if [ -f "$PWD/class.sh" ]
-then
-  source "$PWD/class.sh"
-fi
-
-if [ -f "$PWD/array.sh" ]
-then
-  source "$PWD/array.sh"
-fi
-
-
 
 function kd() {
   if [[ -z "$1" ]]; then

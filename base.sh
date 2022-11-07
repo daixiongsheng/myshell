@@ -27,14 +27,14 @@ plugins=(
   dirhistory
 )
 
-if [ -f "$PWD/batch.sh" ]
+if [ -f "$HOME/myshell/batch.sh" ]
 then
-  alias run="$PWD/batch.sh"
+  alias run="$HOME/myshell/batch.sh"
 fi
 
-if [ -f "$PWD/common.sh" ]
+if [ -f "$HOME/myshell/common.sh" ]
 then
-  source $PWD/common.sh
+  source $HOME/myshell/common.sh
 fi
 
 
@@ -103,5 +103,5 @@ alias dir="ls -l | grep "^d" | awk '{print \$NF}'"
 alias files="ls -l | grep "^-" | awk '{print \$NF}'"
 alias gcaam="git add --all; git commit -a -m"
 alias gcaam!="git add --all; git commit -v -a --no-edit --amend"
-
-
+alias "vi=/Users/daixiongsheng/nvim-macos/bin/nvim"
+alias "vim=/Users/daixiongsheng/nvim-macos/bin/nvim"
