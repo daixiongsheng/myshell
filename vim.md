@@ -68,7 +68,7 @@ D 删除到行尾
 "reg 复制reg中的内容
 3rc 用c替换当前光标后面3个字符
 3R 替换3次本次输入的内容
-hello world
+ffff
 1cc 修改1行
 1S 修改1行
 2s 修改2个字符
@@ -113,18 +113,33 @@ vi"
 vi`
 const a = 'hell world'
 const a = "hell world"
-
-const a = {
-
-hello world
-}
-
-3hello world
-4hello world
-5hello world
-6hello world
-
-
-
-
-
+. 重复上次命令
+q{a-zA-Z} 保存当前记录到a
+q 退出录制
+Q 重复上次录制的macro
+@{a-zA-Z} 执行录制的macro
+2@@ 重复上次执行的macro
+:@ 以命令方式执行录制的macro
+:@@
+:g/pattern/cmd 对匹配到的内容执行命令
+:g!/pattern/cmd 对未匹配到的内容执行命令
+:so! file 从文件读vim命令
+:so file 从文件读ex命令
+:sl 3  sleep 3s
+:ma cmd1 cmd2  map命令在Norlmal和Visual模式
+:ma! cmd1 cmd2 map命令在Insert和命令模式
+:unmap
+:unmap!
+:ma cmd 查看map命令
+:ma! cmd
+:cc  显示错误
+:cn 显示下一个错误
+:cp 显示上一个错误
+:cl 显示所有错误
+<C-G> 显示当前文件名
+ga  显示光标字符的ascii码
+g8  显示光标字符的UTF-8码
+g <C-G> 显示当前行列字符信息
+gQ 切换到Ex模式
+:split
+:vsplit

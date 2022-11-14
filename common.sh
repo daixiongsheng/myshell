@@ -152,4 +152,11 @@ function rms() {
   done
 }
 
+function m() {
+  git checkout "release-$1"
+}
+
+function pc() {
+  git checkout "release-web-2022.$1"
+}
 
