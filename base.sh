@@ -25,6 +25,17 @@ plugins=(
   copypath
   dash
   dirhistory
+  zsh-navigation-tools
+  web-search
+  wd
+  urltools
+  transfer
+  timer
+  thefuck
+  sprunge
+  python
+  pip
+  github
 )
 
 if [ -f "$HOME/myshell/batch.sh" ]

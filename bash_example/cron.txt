@@ -1,0 +1,1 @@
+min hour dayofmonth month dayofweek command
