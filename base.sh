@@ -35,7 +35,9 @@ plugins=(
   sprunge
   python
   pip
-  github
+  git-auto-fetch
+  emoji
+  command-not-found
 )
 
 if [ -f "$HOME/myshell/batch.sh" ]
