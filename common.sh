@@ -160,3 +160,7 @@ function pc() {
   git checkout "release-web-2022.$1"
 }
 
+function kp() {
+  lsof -i ":$1" | awk '{{print $2}}' | egrep '\d+' | xargs kill -9   
+}
+
