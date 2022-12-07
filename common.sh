@@ -164,3 +164,22 @@ function kp() {
   lsof -i ":$1" | awk '{{print $2}}' | egrep '\d+' | xargs kill -9   
 }
 
+
+function mrpc() {
+  year=`date +%Y`
+  if [[ $1 != "" ]]
+  then
+    pnpm run mr "release-web-${year}.$1"
+  else 
+    pnpm run mr develop
+  fi
+}
+
+function mrm() {
+  if [[ $1 != "" ]]
+  then
+    pnpm run mr "release-$1"
+  else 
+    pnpm run mr develop
+  fi
+}
