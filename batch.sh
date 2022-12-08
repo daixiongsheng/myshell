@@ -10,18 +10,33 @@ do
 done
 
 function cphosts() {
+    if [[ "$1" != "" ]]; then
+        scp -o ConnectTimeout=1 /etc/hosts root@"$1":/etc/hosts
+        return
+    fi
+    
     for i in $hosts;do
         scp -o ConnectTimeout=1 /etc/hosts root@"$i":/etc/hosts
     done
 }
 
 function shutdown() {
+    if [[ "$1" != "" ]]; then
+        ssh -o ConnectTimeout=1 root@$1 'shutdown now'
+        return
+    fi
+
     for i in $hosts;do
-        `ssh -o ConnectTimeout=1 root@$i 'shutdown now'`
+        ssh -o ConnectTimeout=1 root@$i 'shutdown now'
     done
 }
 
 function reboot() {
+    if [[ "$1" != "" ]]; then
+        ssh -o ConnectTimeout=1 root@$1 'reboot'
+        return
+    fi
+
     for i in $hosts;do
         ssh -o ConnectTimeout=1 root@$i 'reboot'
     done
@@ -33,6 +48,12 @@ function test() {
 
 
 function cmd() {
+    r=`echo $1 | egrep '\d{3}$'`
+    if [[ $? -eq 0 ]]; then
+        ssh -o ConnectTimeout=1 root@$1 "${@:2}"
+        return
+    fi
+
     echo "$*"
     for i in $hosts;do
         ssh -o ConnectTimeout=1 root@$i "$*"
@@ -40,6 +61,10 @@ function cmd() {
 }
 
 function update() {
+    if [[ "$1" != "" ]]; then
+        ssh -o ConnectTimeout=1 root@$1 "cd /root/myshell && git pull"
+        return
+    fi
     for i in $hosts;do
         echo $i
         ssh -o ConnectTimeout=1 root@$i "cd /root/myshell && git pull"
@@ -63,6 +88,3 @@ if [[ "" == $1 ]];then
 else
     $@
 fi
-
-
-
