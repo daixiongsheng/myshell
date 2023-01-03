@@ -157,7 +157,13 @@ function m() {
 }
 
 function pc() {
-  git checkout "release-web-2022.$1"
+  year=`date +%Y`
+  if [[ $1 != "" ]]
+  then
+    git checkout "release-web-${year}.$1"
+  else 
+    git checkout develop
+  fi
 }
 
 function kp() {
