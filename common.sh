@@ -189,3 +189,9 @@ function mrm() {
     pnpm run mr develop
   fi
 }
+
+function slide() {
+  nvm use 14
+  emo start base &
+  emo start web
+}
