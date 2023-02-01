@@ -193,5 +193,5 @@ function mrm() {
 function slide() {
   nvm use 14
   emo start base &
-  emo start web
+  emo start web --dependencies
 }
