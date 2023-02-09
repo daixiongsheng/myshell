@@ -192,6 +192,8 @@ function mrm() {
 
 function slide() {
   nvm use 14
+  lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+  lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
   emo start base &
   emo start web --dependencies
 }
