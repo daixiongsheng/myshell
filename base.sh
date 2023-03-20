@@ -38,7 +38,13 @@ plugins=(
   git-auto-fetch
   emoji
   command-not-found
+  tmux
 )
+
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_DEFAULT_SESSION_NAME=main
+export ZSH_TMUX_AUTOCONNECT=true
+export ZSH_TMUX_AUTOQUIT=false
 
 if [ -f "$HOME/myshell/batch.sh" ]
 then
@@ -125,3 +131,7 @@ alias "piD=pnpm i -D"
 alias "put=yarn ttdocx && yarn only-pub:ttdocx"
 alias "pid=pnpm i -D"
 alias "pst=pnpm run start"
+alias "t=tmux"
+alias "td=t detach"
+alias "tk=tmux kill-session -t"
+alias "tss=t switch -t"
