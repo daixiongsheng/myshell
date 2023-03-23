@@ -45,6 +45,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_DEFAULT_SESSION_NAME=main
 export ZSH_TMUX_AUTOCONNECT=true
 export ZSH_TMUX_AUTOQUIT=false
+export ZSH_TMUX_CONFIG=$HOME/.tmux.conf
 
 if [ -f "$HOME/myshell/batch.sh" ]
 then
