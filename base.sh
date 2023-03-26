@@ -45,7 +45,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_DEFAULT_SESSION_NAME=main
 export ZSH_TMUX_AUTOCONNECT=true
 export ZSH_TMUX_AUTOQUIT=false
-export ZSH_TMUX_CONFIG=$HOME/.tmux.conf
+export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 
 if [ -f "$HOME/myshell/batch.sh" ]
 then
@@ -78,7 +78,6 @@ alias dport="lsof -i "
 alias ip='ifconfig -a | egrep "inet\s+.*" | egrep "([0-9]+\.){3}[0-9]+"'
 alias hi="history -i"
 alias bi="brew install"
-alias subl="/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 alias webstorm=/Applications/WebStorm.app/Contents/MacOS/webstorm
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias j=z
@@ -103,18 +102,12 @@ alias "zp=nohup java -jar $HOME/Documents/apps/ZooInspector/build/zookeeper-dev-
 alias "shv=ssh -o user=root"
 alias "grget=git remote get-url origin"
 
-alias "landnode"="arc land --keep-branchs --onto master  --revision"
-alias "landrn"="arc land --keep-branchs --onto main  --revision"
-alias "diffnode"="arc diff origin/master"
-alias "diffrn"="arc diff origin/main"
 alias "bsr=brew services restart"
 alias "bs=brew services"
 alias "file-count=ls -lR|grep "^-"|wc -l"
 alias v="code ."
 
-alias "wechat=nohup /Applications/WeChat.app/Contents/MacOS/WeChat > /dev/null &"
 alias "hig=history -i | grep "
-alias "dev=ssh daixiongsheng@dev.cc"
 alias "p=pnpm"
 alias nnode='node -e "const exit=()=>process.exit(0)" -i'
 alias "ysm=yarn serve-m"
@@ -125,7 +118,6 @@ alias gcaam="git add --all; git commit -a -m"
 alias gcaam!="git add --all; git commit -v -a --no-edit --amend"
 alias "nv=nvim"
 alias "vi=nvim"
-alias "pi=pnpmi"
 alias "pi=pnpm i"
 alias "pig=pnpm i -g"
 alias "piD=pnpm i -D"
