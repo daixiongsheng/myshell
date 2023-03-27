@@ -15,7 +15,7 @@ function resetGit() {
 }
 
 function mc() {
-	mkdir $1 && cd $1
+	mkdir -p $1 && cd $1
 }
 
 
@@ -94,10 +94,14 @@ function proxy() {
     export https_proxy=http://mac:9999
 }
 
+function unproxy() {
+    unset http_proxy
+    unset https_proxy
+}
 
 function kf() {
-  cd $HOME/Documents/apps/kafka-map/
-  nohup /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/bin/java -jar $HOME/Documents/apps/kafka-map/kafka-map.jar  > /dev/null 2>&1 &
+  cd $HOME/Documentss/apps/kafka-map/
+  nohup /Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home/bin/java -jar $HOME/Documentss/apps/kafka-map/kafka-map.jar  > /dev/null 2>&1 &
 }
 
 
@@ -106,7 +110,7 @@ function tools() {
 }
 
 
-function push () {
+function push_github() {
   git config user.email daixiongsheng@gmail.com
   git add .
   date=$(date "+%Y-%m-%d-%H:%M:%S")
@@ -190,6 +194,16 @@ function mrm() {
   fi
 }
 
+function slide_front() {
+  nvm use 16.19.0
+  export CONSUL_HTTP_HOST=10.225.130.44
+  export BYTED_HOST_IP=true
+  lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+  lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+  emo start base &
+  emo start web --dependencies  &
+}
+
 function slide() {
   nvm use 16.19.0
   export CONSUL_HTTP_HOST=10.225.130.44
@@ -197,7 +211,7 @@ function slide() {
   lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
   lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
   emo start base &
-  emo start web --dependencies
+  emo start web --dependencies 
 }
 
 function slideweb() {
@@ -206,6 +220,6 @@ function slideweb() {
   export BYTED_HOST_IP=true
   lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
   lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-  emo start base &
-  emo start web
+  nohup emo start base > base.log 2>&1 &
+  nohup emo start web > web.log 2>&1 &
 }
