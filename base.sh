@@ -1,44 +1,45 @@
 ZSH_THEME="adben"
 plugins=(
-  git
-  z
-  brew
-  vscode
-  man
-  golang
-  docker
-  mvn
-  node
-  nvm
-  redis-cli
-  sublime
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  brew
-  sudo
-  systemadmin
-  systemd
-  ag
-  alias-finder
-  aliases
-  copyfile
-  copypath
-  dash
-  dirhistory
-  zsh-navigation-tools
-  web-search
-  wd
-  urltools
-  transfer
-  timer
-  thefuck
-  sprunge
-  python
-  pip
-  git-auto-fetch
-  emoji
-  command-not-found
-  tmux
+	git
+	z
+	brew
+	vscode
+	man
+	golang
+	docker
+	mvn
+	node
+	nvm
+	redis-cli
+	sublime
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	brew
+	sudo
+	systemadmin
+	systemd
+	ag
+	alias-finder
+	aliases
+	copyfile
+	copypath
+	dash
+	dirhistory
+	zsh-navigation-tools
+	web-search
+	wd
+	urltools
+	transfer
+	timer
+	thefuck
+	sprunge
+	python
+	pip
+	git-auto-fetch
+	emoji
+	command-not-found
+	tmux
+	tmuxinator
 )
 
 export ZSH_TMUX_AUTOSTART=true
@@ -47,16 +48,9 @@ export ZSH_TMUX_AUTOCONNECT=true
 export ZSH_TMUX_AUTOQUIT=false
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 
-if [ -f "$HOME/myshell/batch.sh" ]
-then
-  alias run="$HOME/myshell/batch.sh"
+if [ -f "$HOME/myshell/common.sh" ]; then
+	source $HOME/myshell/common.sh
 fi
-
-if [ -f "$HOME/myshell/common.sh" ]
-then
-  source $HOME/myshell/common.sh
-fi
-
 
 alias gsp="git stash pop"
 alias gs="git stash"
