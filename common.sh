@@ -194,6 +194,6 @@ function slideweb() {
 	export BYTED_HOST_IP=true
 	lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
 	lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-	nohup emo start base >base.log 2>&1 &
-	nohup emo start web >web.log 2>&1 &
+	emo start base &
+	emo start web
 }
