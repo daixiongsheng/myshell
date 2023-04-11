@@ -1,5 +1,6 @@
 ZSH_THEME="adben"
 plugins=(
+	zsh-completions
 	git
 	z
 	brew
@@ -48,6 +49,7 @@ export ZSH_TMUX_AUTOCONNECT=true
 export ZSH_TMUX_AUTOQUIT=false
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export XDG_CONFIG_HOME=$HOME/.config
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
 if [ -f "$HOME/myshell/common.sh" ]; then
 	source $HOME/myshell/common.sh
