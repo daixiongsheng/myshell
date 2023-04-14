@@ -5,7 +5,7 @@ function kd() {
 		echo "Usage: $0 process name"
 		return 1
 	fi
-	ps aux | grep $1 | awk '{print $2}' | xargs kill -9
+	ps aux | grep -i $1 | awk '{print $2}' | xargs kill -9
 }
 
 function resetGit() {

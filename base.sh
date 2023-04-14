@@ -43,6 +43,7 @@ plugins=(
 	tmuxinator
 )
 
+export EDITOR=nvim
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_DEFAULT_SESSION_NAME=main
 export ZSH_TMUX_AUTOCONNECT=true
