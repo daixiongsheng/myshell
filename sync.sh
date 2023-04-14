@@ -10,6 +10,8 @@ function sync() {
 		git commit -m "$date $1"
 		git pull
 		git push origin $git_current_branch
+	else
+		git pull
 	fi
 }
 
