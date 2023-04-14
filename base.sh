@@ -48,6 +48,7 @@ export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_DEFAULT_SESSION_NAME=main
 export ZSH_TMUX_AUTOCONNECT=true
 export ZSH_TMUX_AUTOQUIT=false
+export ZSH_TMUX_AUTOSTART_ONCE=true
 export ZSH_TMUX_CONFIG=$HOME/.config/tmux/tmux.conf
 export XDG_CONFIG_HOME=$HOME/.config
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
