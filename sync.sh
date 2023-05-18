@@ -28,9 +28,9 @@ git_current_branch() {
 
 dirs=(
 	$HOME/myshell
-	$XDG_CONFIG_HOME/tmux
-	$XDG_CONFIG_HOME/nvim
-	$XDG_CONFIG_HOME/yabai
+	$HOME/.config/tmux
+	$HOME/.config/nvim
+	$HOME/.config/yabai
 )
 
 for dir in ${dirs[@]}; do
