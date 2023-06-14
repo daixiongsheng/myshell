@@ -1,3 +1,4 @@
+export ESLINT_FIX=true
 ZSH_THEME="adben"
 plugins=(
 	zsh-completions
@@ -103,7 +104,7 @@ alias "grget=git remote get-url origin"
 
 alias "bsr=brew services restart"
 alias "bs=brew services"
-alias "file-count=ls -lR|grep "^-"|wc -l"
+alias "fileCount"='ls -lR|grep "^-"|wc -l"'
 alias v="code ."
 
 alias "hig=history -i | grep "
@@ -111,10 +112,8 @@ alias "p=pnpm"
 alias nnode='node -e "const exit=()=>process.exit(0)" -i'
 alias "ysm=yarn serve-m"
 alias "ys=yarn start"
-alias dir="ls -l | grep "^d" | awk '{print \$NF}'"
-alias files="ls -l | grep "^-" | awk '{print \$NF}'"
-alias gcaam="git add --all; git commit -a -m"
-alias gcaam!="git add --all; git commit -v -a --no-edit --amend"
+alias dir="ls -l | grep '^d' | awk '{print \$NF}'"
+alias files="ls -l | grep '^-' | awk '{print \$NF}'"
 alias "nv=nvim"
 alias "vi=nvim"
 alias "pi=pnpm i"
