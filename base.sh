@@ -1,4 +1,5 @@
 export ESLINT_FIX=true
+export HOMEBREW_NO_AUTO_UPDATE=true
 ZSH_THEME="adben"
 plugins=(
 	zsh-completions
