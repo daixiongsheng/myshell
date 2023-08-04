@@ -206,3 +206,16 @@ function slideweb() {
 	emo start base &
 	emo start web
 }
+
+function proxySlide() {
+	ip=$1
+	port=$2
+	if [[ $port == "" ]]; then
+		port="4001"
+	fi
+
+	if [[ $ip == "" ]]; then
+		ip=10.37.72.29
+	fi
+	gost "-L=tcp://:$port/$ip:$port"
+}
