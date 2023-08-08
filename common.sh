@@ -148,7 +148,7 @@ function pc() {
 }
 
 function kp() {
-	lsof -i ":$1" | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+	lsof -i ":$1" | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 }
 
 function mrpc() {
@@ -172,8 +172,8 @@ function slide_front() {
 	nvm use 16.19.0
 	export CONSUL_HTTP_HOST=10.225.130.44
 	export BYTED_HOST_IP=true
-	lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-	lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	emo start base &
 	emo start web --dependencies &
 }
@@ -182,8 +182,8 @@ function slide() {
 	nvm use 16.19.0
 	export CONSUL_HTTP_HOST=10.225.130.44
 	export BYTED_HOST_IP=true
-	lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-	lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	emo start web --dependencies
 }
 
@@ -191,8 +191,8 @@ function slide_width_base() {
 	nvm use 16.19.0
 	export CONSUL_HTTP_HOST=10.225.130.44
 	export BYTED_HOST_IP=true
-	lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-	lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	emo start base &
 	emo start web --dependencies
 }
@@ -201,8 +201,8 @@ function slideweb() {
 	nvm use 16.19.0
 	export CONSUL_HTTP_HOST=10.225.130.44
 	export BYTED_HOST_IP=true
-	lsof -i :4001 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
-	lsof -i :3333 | awk '{{print $2}}' | egrep '\d+' | xargs kill -9
+	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	emo start base &
 	emo start web
 }
