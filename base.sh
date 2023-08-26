@@ -9,7 +9,6 @@ plugins=(
 	vscode
 	man
 	golang
-	docker
 	mvn
 	node
 	nvm
