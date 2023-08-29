@@ -219,3 +219,12 @@ function proxySlide() {
 	fi
 	gost "-L=tcp://:$port/$ip:$port"
 }
+
+function resetRemote() {
+	year=$(date +%Y)
+	if [[ $1 != "" ]]; then
+		git reset "origin/release-web-${year}.$1"
+	else
+		git reset origin/develop
+	fi
+}
