@@ -228,3 +228,13 @@ function resetRemote() {
 		git reset origin/develop
 	fi
 }
+
+
+function ggcb() {
+	year=$(date +%Y)
+	if [[ $2 != "" ]]; then
+		git checkout -b  $1 "origin/release-web-${year}.$2"
+	else
+		git checkout -b origin/develop
+	fi
+}
