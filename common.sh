@@ -238,3 +238,13 @@ function ggcb() {
 		git checkout -b origin/develop
 	fi
 }
+
+
+function delEmpBranch() {
+	for b in `git branch --list`;do
+		ret=`git branch --remotes | grep "origin/$b$"`
+		if [[ "" == $ret && "*" != $b ]];then
+			git branch --delete --force $b
+		fi
+	done
+}
