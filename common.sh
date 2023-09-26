@@ -184,7 +184,8 @@ function slide() {
 	export BYTED_HOST_IP=true
 	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
-	emo start web --dependencies
+	emo run dev --filter ./packages -n &
+  emo run dev --filter web &
 }
 
 function slide_width_base() {
