@@ -184,6 +184,15 @@ function slide() {
 	export BYTED_HOST_IP=true
 	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	emo start web --dependencies
+}
+
+function slide_new() {
+	nvm use 16.19.0
+	export CONSUL_HTTP_HOST=10.225.130.44
+	export BYTED_HOST_IP=true
+	lsof -i :4001 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
+	lsof -i :3333 | awk '{{print $2}}' | egrep '[0-9]+' | xargs kill -9
 	emo run dev --filter ./packages -n &
   emo run dev --filter web &
 }
