@@ -1,5 +1,6 @@
 export ESLINT_FIX=true
 export HOMEBREW_NO_AUTO_UPDATE=true
+export HOMEBREW_NO_INSTALL_CLEANUP=true
 ZSH_THEME="adben"
 plugins=(
 	zsh-completions
@@ -43,6 +44,10 @@ plugins=(
 	tmux
 	tmuxinator
 	git-commit
+	git-escape-magic
+	git-extras
+	gitignore
+	gitignore
 )
 
 export RSPACK=true
