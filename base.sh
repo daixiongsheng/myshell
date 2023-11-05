@@ -47,7 +47,8 @@ plugins=(
 	git-escape-magic
 	git-extras
 	gitignore
-	gitignore
+	zsh-interactive-cd
+	zsh-navigation-tools
 )
 
 export RSPACK=true
