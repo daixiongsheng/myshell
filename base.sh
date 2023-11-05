@@ -42,6 +42,7 @@ plugins=(
 	command-not-found
 	tmux
 	tmuxinator
+	git-commit
 )
 
 export RSPACK=true
