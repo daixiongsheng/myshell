@@ -1,4 +1,5 @@
 export ESLINT_FIX=true
+export FASTER=true
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_INSTALL_CLEANUP=true
 ZSH_THEME="adben"
