@@ -259,6 +259,7 @@ function ggcb() {
 
 
 function delEmpBranch() {
+	git fetch -p
 	for b in `git branch --list`;do
 		ret=`git branch --remotes | grep "origin/$b$"`
 		if [[ "" == $ret && "*" != $b ]];then
