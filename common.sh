@@ -265,5 +265,9 @@ function delEmpBranch() {
 		if [[ "" == $ret && "*" != $b ]];then
 			git branch --delete --force $b
 		fi
+
+		if [[ $b =~ "release-*" ]];then
+			git branch --delete --force $b
+		fi
 	done
 }
