@@ -140,8 +140,19 @@ function m() {
 
 function pc() {
 	year=$(date +%Y)
+	prev=$(($year - 1));
+	next=$(($year + 1));
 	if [[ $1 != "" ]]; then
-		git checkout "release-web-${year}.$1"
+		b1="release-web-${prev}.$1"
+		b2="release-web-${year}.$1"
+		b3="release-web-${next}.$1"
+
+		for b in $b2 $b1 $b3; do
+				ret=`git branch -a | grep $b`
+				if [[ $ret != "" ]]; then
+					git checkout $b
+				fi
+		done
 	else
 		git checkout develop
 	fi
