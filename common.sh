@@ -29,6 +29,19 @@ function gop() {
 	fi
 }
 
+function gopc() {
+	branch=$(git rev-parse --abbrev-ref HEAD)
+	url=$(git remote get-url origin)
+	if [[ $url =~ "git@.*" ]]; then
+		url=${url##git@}
+		url=${url/:/\/}
+		url=${url/.git/}
+		open https://$url/tree/$branch
+	else
+		open $url/tree/$branch
+	fi
+}
+
 function server() {
 	if [[ $1 == "" ]]; then
 		open http://127.0.0.1
@@ -140,18 +153,18 @@ function m() {
 
 function pc() {
 	year=$(date +%Y)
-	prev=$(($year - 1));
-	next=$(($year + 1));
+	prev=$(($year - 1))
+	next=$(($year + 1))
 	if [[ $1 != "" ]]; then
 		b1="release-web-${prev}.$1"
 		b2="release-web-${year}.$1"
 		b3="release-web-${next}.$1"
 
 		for b in $b2 $b1 $b3; do
-				ret=`git branch -a | grep $b`
-				if [[ $ret != "" ]]; then
-					git checkout $b
-				fi
+			ret=$(git branch -a | grep $b)
+			if [[ $ret != "" ]]; then
+				git checkout $b
+			fi
 		done
 	else
 		git checkout develop
@@ -205,6 +218,8 @@ function slide() {
 	nvm use 18.12.0
 	export CONSUL_HTTP_HOST=10.225.130.44
 	export BYTED_HOST_IP=true
+	branch=$(git rev-parse --abbrev-ref HEAD)
+	export BUILD_REPO_BRANCH=$branch
 	closeSlide
 	emo start web --dependencies
 }
