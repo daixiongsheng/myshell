@@ -164,6 +164,7 @@ function pc() {
 			ret=$(git branch -a | grep $b)
 			if [[ $ret != "" ]]; then
 				git checkout $b
+				return
 			fi
 		done
 	else
