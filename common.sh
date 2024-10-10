@@ -278,3 +278,25 @@ function delEmpBranch() {
 		fi
 	done
 }
+
+
+function resetOrigin() {
+	year=$(date +%Y)
+	branch=$1
+	b1="origin/release-web-${year}.$1"
+	b2="origin/$1"
+
+	for b in $b1 $b2; do
+		ret=$(git branch -a | grep -e "$b\$")
+		if [[ $ret != "" ]]; then
+			for file in $@; do
+				if [[ $file == $branch ]]; then
+					continue
+				fi
+				echo git reset $b $file
+				git reset $b $file
+			done
+			return
+		fi
+	done
+}
