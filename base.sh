@@ -21,7 +21,6 @@ plugins=(
 	sudo
 	systemadmin
 	systemd
-	ag
 	alias-finder
 	aliases
 	copyfile
