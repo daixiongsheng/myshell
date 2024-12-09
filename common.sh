@@ -207,18 +207,12 @@ function closeSlide() {
 }
 
 function slide_front() {
-	nvm use 18.12.0
-	export CONSUL_HTTP_HOST=10.225.130.44
-	export BYTED_HOST_IP=true
 	closeSlide
 	emo start base &
 	emo start web --dependencies &
 }
 
 function slide() {
-	nvm use 18.12.0
-	export CONSUL_HTTP_HOST=10.225.130.44
-	export BYTED_HOST_IP=true
 	branch=$(git rev-parse --abbrev-ref HEAD)
 	export BUILD_REPO_BRANCH=$branch
 	closeSlide
@@ -226,9 +220,6 @@ function slide() {
 }
 
 function slide_width_base() {
-	nvm use 18.12.0
-	export CONSUL_HTTP_HOST=10.225.130.44
-	export BYTED_HOST_IP=true
 	closeSlide
 	emo start base &
 	emo start web --dependencies
@@ -278,7 +269,6 @@ function delEmpBranch() {
 		fi
 	done
 }
-
 
 function resetOrigin() {
 	year=$(date +%Y)
