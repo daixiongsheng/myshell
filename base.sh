@@ -4,6 +4,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=true
 export HOMEBREW_NO_AUTO_UPDATE=true
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ZSH_THEME="adben"
 plugins=(
 	zsh-completions
