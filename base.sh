@@ -50,7 +50,6 @@ plugins=(
 	git-escape-magic
 	git-extras
 	gitignore
-	zsh-interactive-cd
 	zsh-navigation-tools
 )
 
