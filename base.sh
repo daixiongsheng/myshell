@@ -85,7 +85,7 @@ alias c=clear
 alias nsr="npm run server"
 alias nst="npm run start"
 alias dport="lsof -i "
-alias ip='ifconfig -a | grep "addr:"
+alias ip='ifconfig -a | grep "addr:"'
 alias hi="history -i"
 alias bi="brew install"
 alias webstorm=/Applications/WebStorm.app/Contents/MacOS/webstorm
@@ -145,5 +145,3 @@ alias "tspr=tsp -R"
 alias "tswh=tsw -h"
 alias "n=nv ."
 alias "k9=kill -9"
-
-
