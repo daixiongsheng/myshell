@@ -145,3 +145,5 @@ alias "tspr=tsp -R"
 alias "tswh=tsw -h"
 alias "n=nv ."
 alias "k9=kill -9"
+
+
