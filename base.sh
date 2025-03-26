@@ -53,7 +53,6 @@ plugins=(
 	zsh-navigation-tools
 )
 
-export RSPACK=true
 export EDITOR=nvim
 export ZSH_TMUX_AUTOSTART=true
 export ZSH_TMUX_DEFAULT_SESSION_NAME=main
