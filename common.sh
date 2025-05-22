@@ -290,3 +290,7 @@ function resetOrigin() {
 		fi
 	done
 }
+
+function jtest() {
+	npx jest --coverage=false $@
+}
